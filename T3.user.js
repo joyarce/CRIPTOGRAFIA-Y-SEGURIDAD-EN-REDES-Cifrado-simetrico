@@ -5,6 +5,7 @@
 // @description  Tarea 3 - Criptografía y Seguridad en Redes
 // @author       Jonathan Oyarce V.
 // @match        http://localhost:8000/Blowfish-PCBC.html
+// @match https://github.com/joyarce/tarea3cripto/blob/main/T3.user.js
 // @require https://gist.githubusercontent.com/aylarov/08eff1bfccb7e0e87a2fef0df766f01c/raw/9c6d8ed3dbb6bafc76fb3c5a6bc5722a41f1f497/ECB_Blowfish.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js
@@ -26,8 +27,7 @@
     var bfd = CryptoJS.enc.Base64.parse(bf);
 
     console.log("parsed:",ivd);
-    console.log("parsed:",ivd);
-    
+
     var w = blowfish.decrypt(bfd, '9kPz9O_H`4nYRx/1',{outputType: 1, cipherMode: 2});
     console.log("Texto plano :",w);
 
