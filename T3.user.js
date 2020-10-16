@@ -15,21 +15,19 @@
 (function() {
     'use strict';
 
+    var iv = document.getElementsByClassName('iv')[0].id; // Get element by id = IV
+    var bf = document.getElementsByClassName('Blowfish')[0].id; // Get element by id = Blowfish
 
-    var iv = document.getElementsByClassName('iv')[0].id;
-    var bf = document.getElementsByClassName('Blowfish')[0].id;
     console.log('iv ' + iv);
     console.log('bf ' + bf);
+// Decode IV String from Base64 Enconding
+    var ivd = CryptoJS.enc.Base64.parse(iv);
+// Decode BlowFish encrypt String from Base64 Enconding
+    var bfd = CryptoJS.enc.Base64.parse(bf);
 
-    //decrypt
-    var parsedWordArray = CryptoJS.enc.Base64.parse(iv);
+    console.log("parsed:",ivd);
 
-
-    console.log("parsed:",parsedWordArray);
-
-
-
-
+    var w = blowfish.decrypt(bfd, '9kPz9O_H`4nYRx/1',{outputType: 1, cipherMode: 2});
+    console.log("w:",w);
 
 })();
-
