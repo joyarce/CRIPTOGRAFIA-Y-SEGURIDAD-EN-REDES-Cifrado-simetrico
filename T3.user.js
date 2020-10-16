@@ -26,7 +26,8 @@
     var bfd = CryptoJS.enc.Base64.parse(bf);
 
     console.log("parsed:",ivd);
-
+    console.log("parsed:",ivd);
+    
     var w = blowfish.decrypt(bfd, '9kPz9O_H`4nYRx/1',{outputType: 1, cipherMode: 2});
     console.log("Texto plano :",w);
 
