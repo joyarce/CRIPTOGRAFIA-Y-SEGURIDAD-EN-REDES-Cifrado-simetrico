@@ -16,6 +16,18 @@ donde el contenido de id corresponde a un mensaje cifrado utilizando la librerí
 Desde el lado del cliente, a través de un plugin para Tampermonkey utilizando Javascript, se descifra el mensaje cifrado previamente, utilizando una configuración previamente acordada (parámetros como llave, semilla, rounds, etc. ) dependiendo los parámetros soportados por el algoritmo y por la implementación del algoritmo.
 
 ## Blowfish
-```
+
 Blowfish es un cifrado de bloque simétrico que se puede utilizar como reemplazo directo de DES o IDEA. Se necesita una clave de longitud variable, desde 32 bits hasta 448 bits (4 a 56 Bytes), lo que la hace ideal tanto para uso doméstico como exportable. Blowfish fue diseñado en 1993 por Bruce Schneier como una alternativa rápida y gratuita a los algoritmos de cifrado existentes. Desde entonces se ha analizado considerablemente y poco a poco está ganando aceptación como un algoritmo de cifrado sólido. Blowfish no está patentado y no tiene licencia, y está disponible gratis para todos los usos.
-```
+
+### Modos de operación de una unidad de cifrado por bloques
+
+En este caso, se trabajará con el Modo PCBC (_Propagating cipher-block chaining_).
+
+<p align="center">
+<img src="https://www.researchgate.net/profile/Rhouma-Rhouma/publication/215783767/figure/fig3/AS:394138559238147@1470981363207/Propagating-cipher-block-chaining-PCBC-mode-encryption.png
+" width="300" height="300" />
+</p>
+
+
+PCBC es usado por Kerberos y Waste. Además de en estos protocolos, su uso es bastante singular.
+
