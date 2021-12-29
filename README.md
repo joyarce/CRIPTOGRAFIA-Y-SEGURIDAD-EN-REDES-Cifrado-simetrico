@@ -23,11 +23,6 @@ Blowfish es un cifrado de bloque simétrico que se puede utilizar como reemplazo
 
 En este caso, se trabajará con el Modo PCBC (_Propagating cipher-block chaining_).
 
-<p align="center">
-<img src="https://www.researchgate.net/profile/Rhouma-Rhouma/publication/215783767/figure/fig3/AS:394138559238147@1470981363207/Propagating-cipher-block-chaining-PCBC-mode-encryption.png
-" width="300" height="300" />
-</p>
-
+![alt text](https://www.researchgate.net/profile/Rhouma-Rhouma/publication/215783767/figure/fig3/AS:394138559238147@1470981363207/Propagating-cipher-block-chaining-PCBC-mode-encryption.png)
 
 PCBC es usado por Kerberos y Waste. Además de en estos protocolos, su uso es bastante singular.
-
