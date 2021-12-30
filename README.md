@@ -18,6 +18,7 @@ Desde el lado del cliente, a través de un plugin para Tampermonkey utilizando J
 ## Archivos
 
 * Archivo Python: Encriptación Blowfish - PCBC y generador HTML.
+
 ```
 import: Se importan librerías necesarias, entre ellas: Blowfish, base 64, time y os urandom.
 ciper: Se crea un objeto Cipher con una key.
@@ -36,7 +37,24 @@ Html1: Se reemplaza dentro del html_str el id por la representación en base 64 
 Html_file: Se crea un archivo con extensión .html con los permisos para escribir en él.
 Html_file.write(html1): Escribimos en el archivo.
 ```
+
+<p align="center">
+<img src="images/bw_html.png" />
+</p>
+
 * Archivo JavaScript: Obtener parámetros desde HTML y desencriptar.
+
+```
+@match / @require: Apunta a un archivo JavaScript que se carga y ejecuta antes de que el script comience a ejecutarse. (Blowfish , Enc-base64, crypto-js , core-min).
+var iv: Variable que representa el vector inicializador (b64) obtenido a partir del HTML.
+console.log(): Mostramos por consola la variable deseada.
+var bf: Variable que representa el texto encriptado (b64) obtenido a partir del HTML.
+enc.Base64.parse(): Decodificar cadena desde Base64.
+```
+
+<p align="center">
+<img src="images/bw_html_js.png" />
+</p>
 
 ## Blowfish
 
