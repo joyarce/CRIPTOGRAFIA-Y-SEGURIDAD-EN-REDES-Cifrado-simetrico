@@ -66,7 +66,7 @@ En este caso, se trabajará con el Modo PCBC (_Propagating cipher-block chaining
 
 ![alt text](https://www.researchgate.net/profile/Rhouma-Rhouma/publication/215783767/figure/fig3/AS:394138559238147@1470981363207/Propagating-cipher-block-chaining-PCBC-mode-encryption.png)
 
-PCBC es usado por Kerberos y Waste. Además de en estos protocolos, su uso es bastante singular.
+PCBC es usado por Kerberos y Waste.
 
 ### IV: Vector de inicialización
 
