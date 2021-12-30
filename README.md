@@ -26,3 +26,9 @@ En este caso, se trabajará con el Modo PCBC (_Propagating cipher-block chaining
 ![alt text](https://www.researchgate.net/profile/Rhouma-Rhouma/publication/215783767/figure/fig3/AS:394138559238147@1470981363207/Propagating-cipher-block-chaining-PCBC-mode-encryption.png)
 
 PCBC es usado por Kerberos y Waste. Además de en estos protocolos, su uso es bastante singular.
+
+### IV: Vector de inicialización
+
+Un IV es un bloque de bits que es utilizado por varios modos de operación para hacer aleatorio el proceso de encriptación y por lo tanto generar distintos textos cifrados incluso cuando el mismo texto claro es encriptado varias veces, sin la necesidad de regenerar la clave, ya que es un proceso lento.
+
+El vector de inicialización tiene requerimientos de seguridad diferentes a los de la clave, por lo que el IV no necesita mantenerse secreto.
