@@ -15,6 +15,29 @@ donde el contenido de id corresponde a un mensaje cifrado utilizando la librerí
 
 Desde el lado del cliente, a través de un plugin para Tampermonkey utilizando Javascript, se descifra el mensaje cifrado previamente, utilizando una configuración previamente acordada (parámetros como llave, semilla, rounds, etc. ) dependiendo los parámetros soportados por el algoritmo y por la implementación del algoritmo.
 
+## Archivos
+
+* Archivo Python: Encriptación Blowfish - PCBC y generador HTML.
+```
+import: Se importan librerías necesarias, entre ellas: Blowfish, base 64, time y os urandom.
+ciper: Se crea un objeto Cipher con una key.
+my_str: Texto plano a cifrar. El modo PCBC solo puede cifrar datos que sean (en longitud) múltiplos del tamaño del bloque. Es decir, len(iv)*n donde en este
+caso, n = 2.
+my_str_as_bytes: Representación en bytes de texto plano a cifrar.
+iv: urandom(8) vector inicializador (Random bytes largo 8).Puede ser modificado directamente.
+data_encrypted: variable que representará el texto cifrado.
+Cipher.encrypt_pcbc(): Método de la clase Cipher. Inicializamos la función encriptar con los parámetros correspondientes.
+token_iv: Vector inicializador decodificado desde utf-8 y codificado en base64 para lograr introducirlo en el archivo HTML.
+token_dataencrypted: Texto encriptado decodificado desde utf-8 y codificado en base64 para lograr introducirlo en el archivo HTML.
+html_str: String que corresponde al futuro archivo HTML.
+html: Se reemplaza dentro del html_str el id por la representación en base 64 del vector inicializador.
+time.sleep(1): Se utilizó para evitar problemas al intentar sobre-escribir.
+Html1: Se reemplaza dentro del html_str el id por la representación en base 64 del texto encriptado por el algoritmo Blowfish.
+Html_file: Se crea un archivo con extensión .html con los permisos para escribir en él.
+Html_file.write(html1): Escribimos en el archivo.
+```
+* Archivo JavaScript: Obtener parámetros desde HTML y desencriptar.
+
 ## Blowfish
 
 Blowfish es un cifrado de bloque simétrico que se puede utilizar como reemplazo directo de DES o IDEA. Se necesita una clave de longitud variable, desde 32 bits hasta 448 bits (4 a 56 Bytes), lo que la hace ideal tanto para uso doméstico como exportable. Blowfish fue diseñado en 1993 por Bruce Schneier como una alternativa rápida y gratuita a los algoritmos de cifrado existentes. Desde entonces se ha analizado considerablemente y poco a poco está ganando aceptación como un algoritmo de cifrado sólido. Blowfish no está patentado y no tiene licencia, y está disponible gratis para todos los usos.
